@@ -1,0 +1,23 @@
+{
+  "name": "auth-pg-server",
+  "version": "1.0.0",
+  "description": "this is the server for the authentication through pg",
+  "main": "./dist/index.js",
+  "scripts": {
+    "built": "(tsc -b && node dist/index.js)",
+    "start": "node dist/index.js"
+  },
+  "author": "Divyansh Gupta",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^20.14.2",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.5"
+  },
+  "dependencies": {
+    "@types/express": "^4.17.21",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2"
+  }
+}
