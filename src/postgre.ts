@@ -9,11 +9,11 @@ const q1=`SELECT * FROM flags`;
 
 const connectToDb=async():Promise<Client>=>{
     const client:Client=new Client({
-        user:"postgres",
-        host:"localhost",
-        database:"world",
-        password:"Div@postgres",
-        port:"5433"
+        user:process.env.USER,
+        host:process.env.localhost,
+        database:process.env.DATABASE,
+        password:process.env.PASSWORD,
+        port:process.env.DBPORT
     });
     await client.connect().then(()=>{
         console.log("db is connected");
