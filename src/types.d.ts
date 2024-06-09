@@ -3,4 +3,13 @@ type UserDataForSignIn={
     password:string
 }
 
-export {UserDataForSignIn};
+type UserfromDB={
+    id:Number,
+    username:string,
+    password_hash:string
+}
+
+export {
+    UserDataForSignIn,
+    UserfromDB
+};
