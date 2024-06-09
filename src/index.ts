@@ -1,20 +1,28 @@
 import express from "express";
-import { Express } from "express";
+import bodyParser from "body-parser";
 
-
+import { Express,Request,Response } from "express";
+import authrouter from "./authentication"; 
+import dbRouter from "./postgre"
 
 require('dotenv').config();
 const app=express();
 
-const port=process.env.PORT;
+app.use(bodyParser.urlencoded({extended:true}));
+app.use(authrouter);
+app.use(dbRouter);
+
+const port:String|Number=process.env.PORT || 4532;
 
 var obj:Object={
-    name:"Divyansh Gupta",
+    name:"Divyansh8888  Gupta",
 };
 
-app.get("/name",(req,res)=>{
-    res.send(obj);
-})
+app.on("mount",()=>console.log("Yippi"));
+
+app.get("/",(req:Request,res:Response)=>{
+    res.status(200).json(obj);
+});
 
 
 app.listen(port,()=>console.log(`Server is running on Port : ${port} `))
